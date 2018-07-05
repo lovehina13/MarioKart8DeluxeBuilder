@@ -21,19 +21,27 @@ if __name__ == '__main__':
     filtreVehicules = []
     filtrePneus = []
     filtrePlaneurs = []
+    filtreStatistiques = {"vitesse": 0.0, "vitesseSol": 0.0, "vitesseEau": 0.0, "vitesseAir": 0.0,
+            "vitesseAntiGravite": 0.0, "acceleration": 0.0, "poids": 0.0, "maniabilite": 0.0,
+            "maniabiliteSol": 0.0, "maniabiliteEau": 0.0, "maniabiliteAir": 0.0,
+            "maniabiliteAntiGravite": 0.0, "adherence": 0.0, "miniTurbo": 0.0}
 
     for nomPilote, pilote in sorted(pilotes.items()):
         if filtrePilotes and nomPilote not in filtrePilotes:
             continue
+
         for nomVehicule, vehicule in sorted(vehicules.items()):
             if filtreVehicules and nomVehicule not in filtreVehicules:
                 continue
+
             for nomPneu, pneu in sorted(pneus.items()):
                 if filtrePneus and nomPneu not in filtrePneus:
                     continue
+
                 for nomPlaneur, planeur in sorted(planeurs.items()):
                     if filtrePlaneurs and nomPlaneur not in filtrePlaneurs:
                         continue
+
                     vitesseSol = (pilote.vitesseSol + vehicule.vitesseSol + pneu.vitesseSol +
                             planeur.vitesseSol + 3.0) / 4.0
                     vitesseEau = (pilote.vitesseEau + vehicule.vitesseEau + pneu.vitesseEau +
@@ -61,5 +69,50 @@ if __name__ == '__main__':
                     statistiques = Statistiques(vitesseSol, vitesseEau, vitesseAir,
                             vitesseAntiGravite, acceleration, poids, maniabiliteSol, maniabiliteEau,
                             maniabiliteAir, maniabiliteAntiGravite, adherence, miniTurbo)
+
+                    if filtreStatistiques["vitesse"] and statistiques.vitesse < \
+                            filtreStatistiques["vitesse"]:
+                        continue
+                    if filtreStatistiques["vitesseSol"] and statistiques.vitesseSol < \
+                            filtreStatistiques["vitesseSol"]:
+                        continue
+                    if filtreStatistiques["vitesseEau"] and statistiques.vitesseEau < \
+                            filtreStatistiques["vitesseEau"]:
+                        continue
+                    if filtreStatistiques["vitesseAir"] and statistiques.vitesseAir < \
+                            filtreStatistiques["vitesseAir"]:
+                        continue
+                    if filtreStatistiques["vitesseAntiGravite"] and \
+                            statistiques.vitesseAntiGravite < filtreStatistiques["vitesseAntiGravite"]:
+                        continue
+                    if filtreStatistiques["acceleration"] and statistiques.acceleration < \
+                            filtreStatistiques["acceleration"]:
+                        continue
+                    if filtreStatistiques["poids"] and statistiques.poids < \
+                            filtreStatistiques["poids"]:
+                        continue
+                    if filtreStatistiques["maniabilite"] and statistiques.maniabilite < \
+                            filtreStatistiques["maniabilite"]:
+                        continue
+                    if filtreStatistiques["maniabiliteSol"] and statistiques.maniabiliteSol < \
+                            filtreStatistiques["maniabiliteSol"]:
+                        continue
+                    if filtreStatistiques["maniabiliteEau"] and statistiques.maniabiliteEau < \
+                            filtreStatistiques["maniabiliteEau"]:
+                        continue
+                    if filtreStatistiques["maniabiliteAir"] and statistiques.maniabiliteAir < \
+                            filtreStatistiques["maniabiliteAir"]:
+                        continue
+                    if filtreStatistiques["maniabiliteAntiGravite"] and \
+                            statistiques.maniabiliteAntiGravite < \
+                            filtreStatistiques["maniabiliteAntiGravite"]:
+                        continue
+                    if filtreStatistiques["adherence"] and statistiques.adherence < \
+                            filtreStatistiques["adherence"]:
+                        continue
+                    if filtreStatistiques["miniTurbo"] and statistiques.miniTurbo < \
+                            filtreStatistiques["miniTurbo"]:
+                        continue
+
                     print "%s\t%s\t%s\t%s\t%s" % (nomPilote, nomVehicule, nomPneu, nomPlaneur,
                             str(statistiques).replace(" ", "\t"))
