@@ -10,31 +10,38 @@
 
 class Statistiques(object):
 
-    def __init__(self, vitesse_sol=float(), vitesse_eau=float(), vitesse_air=float(),
-            vitesse_anti_gravite=float(), acceleration=float(), poids=float(),
-            maniabilite_sol=float(), maniabilite_eau=float(), maniabilite_air=float(),
-            maniabilite_anti_gravite=float(), adherence=float(), mini_turbo=float()):
+    def __init__(self, vitesseSol=float(), vitesseEau=float(), vitesseAir=float(),
+            vitesseAntiGravite=float(), acceleration=float(), poids=float(), maniabiliteSol=float(),
+            maniabiliteEau=float(), maniabiliteAir=float(), maniabiliteAntiGravite=float(),
+            adherence=float(), miniTurbo=float()):
         self.vitesse = float()
-        self.vitesse_sol = vitesse_sol
-        self.vitesse_eau = vitesse_eau
-        self.vitesse_air = vitesse_air
-        self.vitesse_anti_gravite = vitesse_anti_gravite
+        self.vitesseSol = vitesseSol
+        self.vitesseEau = vitesseEau
+        self.vitesseAir = vitesseAir
+        self.vitesseAntiGravite = vitesseAntiGravite
         self.acceleration = acceleration
         self.poids = poids
         self.maniabilite = float()
-        self.maniabilite_sol = maniabilite_sol
-        self.maniabilite_eau = maniabilite_eau
-        self.maniabilite_air = maniabilite_air
-        self.maniabilite_anti_gravite = maniabilite_anti_gravite
+        self.maniabiliteSol = maniabiliteSol
+        self.maniabiliteEau = maniabiliteEau
+        self.maniabiliteAir = maniabiliteAir
+        self.maniabiliteAntiGravite = maniabiliteAntiGravite
         self.adherence = adherence
-        self.mini_turbo = mini_turbo
+        self.miniTurbo = miniTurbo
         self.calculerVitesse()
         self.calculerManiabilite()
 
+    def __str__(self):
+        return "%.2f %.2f %.2f %.2f %.2f %.2f %.2f %.2f %.2f %.2f %.2f %.2f %.2f %.2f" % (
+                self.vitesse, self.vitesseSol, self.vitesseEau, self.vitesseAir,
+                self.vitesseAntiGravite, self.acceleration, self.poids, self.maniabilite,
+                self.maniabiliteSol, self.maniabiliteEau, self.maniabiliteAir,
+                self.maniabiliteAntiGravite, self.adherence, self.miniTurbo)
+
     def calculerVitesse(self):
-        self.vitesse = (self.vitesse_sol + self.vitesse_eau + self.vitesse_air +
-                self.vitesse_anti_gravite) / 4.0
+        self.vitesse = (self.vitesseSol + self.vitesseEau + self.vitesseAir +
+                self.vitesseAntiGravite) / 4.0
 
     def calculerManiabilite(self):
-        self.maniabilite = (self.maniabilite_sol + self.maniabilite_eau + self.maniabilite_air +
-                self.maniabilite_anti_gravite) / 4.0
+        self.maniabilite = (self.maniabiliteSol + self.maniabiliteEau + self.maniabiliteAir +
+                self.maniabiliteAntiGravite) / 4.0
