@@ -1,0 +1,15 @@
+Glider;Speed (Ground);Speed (Water);Speed (Air);Speed (Anti-Gravity);Acceleration;Weight;Handling (Ground);Handling (Water);Handling (Air);Handling (Anti-Gravity);Traction;Mini-Turbo
+Super Glider;1;1;2;0;1;1;1;0;1;1;1;1
+Cloud Glider;0;1;1;1;2;0;1;0;2;1;1;2
+Wario Wing;1;0;2;1;1;2;1;1;1;0;0;1
+Waddle Wing;1;1;2;0;1;1;1;0;1;1;1;1
+Peach Parasol;0;0;1;1;2;1;1;1;2;0;0;2
+Parachute;0;1;1;1;2;0;1;0;2;1;1;2
+Parafoil;0;0;1;1;2;1;1;1;2;0;0;2
+Flower Glider;0;1;1;1;2;0;1;0;2;1;1;2
+Bowser Kite;0;0;1;1;2;1;1;1;2;0;0;2
+Plane Glider;1;0;2;1;1;2;1;1;1;0;0;1
+MKTV Parafoil;0;0;1;1;2;1;1;1;2;0;0;2
+Gold Glider;1;0;2;1;1;2;1;1;1;0;0;1
+Hylian Kite;1;1;2;0;1;1;1;0;1;1;1;1
+Paper Glider;0;1;1;1;2;0;1;0;2;1;1;2
